@@ -1,0 +1,29 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="stylesheet" href="/static/bootstrap.min.css">
+    </head>
+    <body>
+        <h1>Do I need an umbrella?</h1>
+
+        {% if rain %}
+            <div class="rain">{{ rain }}</div>
+        {% endif %}
+
+        <form>
+            <div class="form-group">
+                <label for="postcode">Enter postcode</label>
+                <input type="text" class="input-lg form-control" placeholder="NW5 2HG" name="postcode">
+            </div>
+
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </body>
+</html>

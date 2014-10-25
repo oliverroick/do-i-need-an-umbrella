@@ -1,0 +1,24 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+div.rain {
+    text-align: center;
+    font-size: 36px;
+}
+
+form {
+    width: 300px;
+    margin: 24px auto;
+    border-top: 1px solid #ddd;
+    padding-top: 24px;
+}
+
+input, button {
+
+}
