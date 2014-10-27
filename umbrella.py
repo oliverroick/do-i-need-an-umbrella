@@ -2,11 +2,7 @@ import datapoint
 from datetime import datetime, timedelta
 from postcodes import PostCoder
 
-conn = datapoint.connection(api_key='f414f0c5-bb8e-49bf-b78a-41c1ce746b57')
-
-site = conn.get_nearest_site(0.00568, 51.50156)
-forecast = conn.get_forecast_for_site(site.id, "3hourly")
-current_timestep = forecast.now()
+conn = datapoint.connection(api_key='your-key-here')
 
 
 def get_forecast(lon, lat):
