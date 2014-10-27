@@ -1,24 +1,37 @@
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
     padding: 50px;
+    background-image: url(rain.jpg);
+    background-size: cover;
 }
 
 h1 {
     text-align: center;
+    text-shadow: 0 0 5px #000000;
 }
 
 div.rain {
     text-align: center;
-    font-size: 36px;
+    font-size: 70px;
+    text-shadow: 0 0 5px #000000;
+    font-weight: bold;
 }
 
 form {
-    width: 300px;
     margin: 24px auto;
     border-top: 1px solid #ddd;
     padding-top: 24px;
+    width: 735px;
+    text-shadow: 0 0 5px #000000;
 }
 
-input, button {
+form .form-group {
+    width: 300px;
+    float: left;
+    margin-right: 30px;
+}
 
+form button {
+    margin-top: 30px;
 }

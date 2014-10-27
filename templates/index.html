@@ -7,24 +7,32 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="/static/style.css">
         <link rel="stylesheet" href="/static/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/style.css">
     </head>
     <body>
         <h1>Do I need an umbrella?</h1>
 
-        {% if rain %}
-            <div class="rain">{{ rain }}</div>
+        {% if rain is not none %}
+            <div class="rain">
+            {% if rain > 50 %}
+                Oh yes, you do.
+            {% elif rain > 20 %}
+                Maybe. Take one to be sure.
+            {% else %}
+                Nah, you should be ok.
+            {% endif %}
+            </div>
         {% endif %}
 
         <form>
             <div class="form-group">
-                <label for="postcode">Enter postcode</label>
-                <input type="text" class="input-lg form-control" placeholder="NW5 2HG" name="postcode" required>
+                <label for="postcode">Where are you going (enter postcode)</label>
+                <input type="text" class="input-lg form-control" name="postcode" value="{% if postcode %}{{ postcode }}{% endif %}" required>
             </div>
             <div class="form-group">
-                <label for="postcode">How long will you be out (hours)</label>
-                <input type="number" class="input-lg form-control" name="hours" required>
+                <label for="postcode">How long will you be out (enter hours)</label>
+                <input type="number" class="input-lg form-control" name="hours" value="{% if hours %}{{ hours }}{% endif %}" required>
             </div>
 
             <button class="btn btn-primary" type="submit">Submit</button>

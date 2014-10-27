@@ -6,13 +6,19 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
+    rain = None
     postcode = request.args.get('postcode', None)
-    hours = int(request.args.get('hours', 24))
-    print hours
+    hours = request.args.get('hours', None)
+
     if postcode is not None:
-        rain = do_i_need_an_umbrella(post_code=postcode, hours=hours)
-        return render_template('index.html', rain=rain)
-    return render_template('index.html')
+        rain = do_i_need_an_umbrella(post_code=postcode, hours=int(hours))
+
+    return render_template(
+        'index.html',
+        rain=rain,
+        postcode=postcode,
+        hours=hours
+    )
 
 
 @app.route('/static/<path:path>')
