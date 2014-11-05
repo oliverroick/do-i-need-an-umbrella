@@ -38,4 +38,5 @@ form button {
 
 div#credits {
     width: 735px;
+    text-shadow: 0 0 5px #000000;
 }
